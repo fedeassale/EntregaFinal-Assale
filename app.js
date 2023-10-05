@@ -60,10 +60,10 @@ function tabla(){
             <td>${itemcarrito.marca}</td>
             <td>${itemcarrito.cantidad}</td>
             <td>${itemcarrito.precio}</td>
-            <td>${itemcarrito.subtotal}</td>
+            <td>${itemcarrito.cantidad*itemcarrito.precio}</td>
         </tr>
         `
-        total.textContent = carrito.reduce((acc,item)=> acc+item.subtotal,0);
+        total.textContent = carrito.reduce((acc,item)=> acc+item.cantidad*item.precio,0);
 
         const carritoJSON= JSON.stringify(carrito);
         localStorage.setItem(`carrito`,carritoJSON);        
