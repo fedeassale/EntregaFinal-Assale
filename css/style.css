@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:ital,wght@1,100&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family:'Roboto', sans-serif;
+    background-attachment: fixed;
+}
+div figure button{
+    width: 100%;
+}
+section div img{
+    height: 400px;
+    object-fit: contain;
+}
+.heigh-title{
+    height: 5em;
+}
+.width-figure{
+    width: 30%;
+    margin: 10px;
+}
+.height--img{
+    height: 15em;
+    object-fit: cover;
+}
+/* .card-borde{
+    border-color: $secundaryColor;
+    background-color: $secundaryColor;
+} */
+.width-figure:hover{
+    transform: scale(1.02);
+}
+.centrar{
+    text-align: center;
+}
+body{
+    font-size: 1em;
+    line-height: 2em;
+    background-color: #efefef
+}
+figure div input{
+padding: 1em;
+}
+
+nav{
+    background-image: url(../img/maderaclara.webp);
+}
+.text-nav{
+    font-family: 'Dancing Script', cursive;
+    color:black;
+    font-size:30px;
+    text-shadow: 1px 1px 2px rgb(8, 7, 7), 0 0 1em rgb(45, 12, 12), 0 0 0.2em rgb(45, 7, 7);
+}
+nav a:hover{
+    transform: scale(1.2);
+}
+.grid-body{
+    display: grid;
+    grid-template-columns: 20% 80% ;
+    grid-template-rows:150px 80% 10%;
+    grid-template-areas: 
+    "nav nav"
+    "sidebar main"
+    "footer footer";
+}
+.nav{
+    grid-area: nav;
+}
+.sidebar{
+    grid-area: sidebar;
+    background-color: rgb(255, 255, 255);
+    color:black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 30px;
+    border-right: solid black;
+    border-width: 0.1px;
+}
+.sidebar div{
+    padding:3px;
+    margin:3px;
+    text-decoration: none;
+}
+.main{
+    grid-area: main;
+}
+.footer{
+    grid-area: footer;
+}
+.tamañologo{
+    padding-left: 1em;
+    width: 8em;
+}
