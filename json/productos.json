@@ -1,38 +1,44 @@
 [
     {
+        "img":"./img/2x4 externaop.webp",
         "nombre": "Caja de fijación" ,
         "marca": "SC" ,
         "precio": 6000 ,
         "cantidad":1
     },
     {
+        "img":"./img/img.tenazaop.webp",
         "nombre":"Tenaza 9",
         "marca":"Rhein",
         "precio":5000,
         "cantidad":1
     },
     {
-        "nombre":"Llave",
-        "marca":"Rhein",
+        "img":"./img/cumbrera.webp",
+        "nombre":"Cumbrera",
+        "marca":"SC",
         "precio":3000,
         "cantidad":1
     },
     {
-        "nombre":"Llave1",
+        "img":"./img/llave.webp",
+        "nombre":"Llave",
         "marca":"Rhein",
         "precio":1000,
         "cantidad":1
     },
     {
-        "nombre":"Llave2",
-        "marca":"Rhein",
-        "precio":1000,
+        "img":"./img/conector desigual.webp",
+        "nombre":"Conector Desigual",
+        "marca":"SC",
+        "precio":4000,
         "cantidad":1
     },
     {
-        "nombre":"Llave3",
+        "img":"./img/destornillador.webp",
+        "nombre":"Destornillador",
         "marca":"Rhein",
-        "precio":1000,
+        "precio":3500,
         "cantidad":1
     }
  ]

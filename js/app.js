@@ -1,74 +1,64 @@
-// async function obtenerproductos(){
-//     const response = await fetch ('./productos.json');
-//     if(response.ok){
-//         listadeproductos = await response.json();
-//         console.log(listadeproductos);
-//     }
-// }
-// cargarproductos();
-// cargarproductos = async ()=>{
-//     await obtenerproductos();
-// }
+const shopContent= document.getElementById("shopContent")
 
-
-
-
-
-const carrito=[];
-
-let boton= document.getElementById("btn-carrito")
-boton.addEventListener("click",respuestaClick)
-
-function respuestaClick(){
-// let opcion=1
-// esto de acumular cantidad lo pude hacer funcionar solo en un producto, cuando lo pongo en varios me tira error, en la correccion me pueden indicar como se podria hacer?? gracias
-let indicecarrito = carrito.findIndex((itemcarrito)=> itemcarrito.nombre)
-
-if(indicecarrito !== -1){
-    carrito[indicecarrito].cantidad++;
-}else{
-    // carrito.push(new itemcarrito(listadeproductos [opcion-1].nombre,listadeproductos[opcion-1].marca,listadeproductos[opcion-1].precio,listadeproductos[opcion-1].cantidad));
-    carrito.push(new itemcarrito(listadeproductos [0].nombre,listadeproductos[0].marca,listadeproductos[0].precio,listadeproductos[0].cantidad));
+let carrito=[];
+let listadeproductos=[]
+async function obtenerproductos(){
+      const response = await fetch ('./json/productos.json');
+      if(response.ok){
+          listadeproductos = await response.json();
+          return(listadeproductos);
+    }
 }
 
-
-
-
-tabla()
+cargarproductos = async ()=>{
+     await obtenerproductos();
+     mostrarProducto()
 }
 
-let boton2= document.getElementById("btn-carrito2")
+cargarproductos();
 
-boton2.addEventListener("click",respuestaClick2)
 
-function respuestaClick2(){
-    // let opcion2=2
-carrito.push(new itemcarrito(listadeproductos [1].nombre,listadeproductos[1].marca,listadeproductos[1].precio,listadeproductos[1].cantidad));
 
-tabla()
+ function mostrarProducto(){
+    listadeproductos.forEach((product)=>{
+    let Content= document.createElement("div")
+    Content.className="card width-figure rounded t-2 item"
+    Content.innerHTML = `
+    
+        <img src="${product.img}">
+        <figure class="card-body">
+                <figcaption class="card-title centrar heigh-title text-grande">${product.nombre}</figcaption>
+                <p class="centrar">${product.marca}</p>
+                <p class="centrar">$${product.precio}</p>
+        </figure>  
+    `;
 
+    shopContent.append(Content)
+    
+     let comprar = document.createElement("button");
+     comprar.innerText = "agregar al carrito";
+     comprar.className ="comprar agregar-carrito btn btn-outline-dark";
+     Content.append(comprar);
+    
+     comprar.addEventListener("click",()=>{
+        carrito.push({
+                id: product.id,
+                nombre: product.nombre,
+                marca: product.marca,
+                precio: product.precio,
+                cantidad: product.cantidad
+             });
+              tabla()
+     })
+    })
 }
-
-let boton3= document.getElementById("btn-carrito3")
-boton3.addEventListener("click",respuestaClick3)
-
-function respuestaClick3(){
-let opcion3=3
-
-carrito.push(new itemcarrito(listadeproductos [opcion3-1].nombre,listadeproductos[opcion3-1].marca,listadeproductos[opcion3-1].precio,listadeproductos[opcion3-1].cantidad));
-
-
-tabla()
-
-}
-
 
 function tabla(){
     const bodytabla = document.getElementById("items")
     const total = document. querySelector(`#total`);
     bodytabla.innerHTML=``;
-    carrito.forEach((itemcarrito,index)=>{
-        const{nombre,marca,cantidad,precio}=itemcarrito
+    carrito.forEach((item,index)=>{
+        const{nombre,marca,cantidad,precio}=item
         bodytabla.innerHTML =bodytabla.innerHTML+`
         <tr>
             <th scope="row">${index+1}</th>
@@ -94,6 +84,84 @@ boton4.addEventListener("click",respuestaClick4)
 function respuestaClick4(){
     carrito.splice(0)
     tabla()
+    total.textContent=0;
 }
 
+let boton5= document.getElementById("filtroSc")
+boton5.addEventListener("click",respuestaClick5)
 
+function respuestaClick5(){
+    const resultado= listadeproductos.filter((el)=>el.marca.includes`SC`)
+    const filtro1 = document.getElementById("shopContent")
+    filtro1.innerHTML=``;
+    resultado.forEach((product)=>{
+        let Content= document.createElement("div")
+        Content.className="card width-figure rounded t-2 item"
+        Content.innerHTML = `
+            <img src="${product.img}">
+            <figure class="card-body">
+                    <figcaption class="card-title centrar heigh-title text-grande">${product.nombre}</figcaption>
+                    <p class="centrar">${product.marca}</p>
+                    <p class="centrar">$${product.precio}</p>
+            </figure>  
+        `;
+    
+        shopContent.append(Content)
+        
+         let comprar = document.createElement("button");
+         comprar.innerText = "agregar al carrito";
+         comprar.className ="comprar agregar-carrito btn btn-outline-dark";
+         Content.append(comprar);
+        
+         comprar.addEventListener("click",()=>{
+            carrito.push({
+                    id: product.id,
+                    nombre: product.nombre,
+                    marca: product.marca,
+                    precio: product.precio,
+                    cantidad: product.cantidad
+                 });
+                  tabla()
+    })
+})}
+let boton6= document.getElementById("filtroRhein")
+boton6.addEventListener("click",respuestaClick6)
+
+function respuestaClick6(){
+    const resultado2= listadeproductos.filter((el)=>el.marca.includes`Rhein`)
+    console.log(resultado2)
+    const filtro2 = document.getElementById("shopContent")
+    filtro2.innerHTML=``;
+    resultado2.forEach((product)=>{
+        let Content= document.createElement("div")
+        Content.className="card width-figure rounded t-2 item"
+        Content.innerHTML = `
+            <img src="${product.img}">
+            <figure class="card-body">
+                    <figcaption class="card-title centrar heigh-title text-grande">${product.nombre}</figcaption>
+                    <p class="centrar">${product.marca}</p>
+                    <p class="centrar">$${product.precio}</p>
+            </figure>  
+        `;
+    
+        shopContent.append(Content)
+        
+         let comprar = document.createElement("button");
+         comprar.innerText = "agregar al carrito";
+         comprar.className ="comprar agregar-carrito btn btn-outline-dark";
+         Content.append(comprar);
+        
+         comprar.addEventListener("click",()=>{
+            carrito.push({
+                    id: product.id,
+                    nombre: product.nombre,
+                    marca: product.marca,
+                    precio: product.precio,
+                    cantidad: product.cantidad
+                 });
+                  tabla()
+                 })
+})}
+// Buen dia profe, le queria decir que probe de todas formas tratar de hacer lo de la cantidad, que se vaya acumulando cada vez que se agrega el mismo producto al carrito y no lo logre,
+// lo deje de lado porque queria avanzar con todo lo demas y hoy que termine con lo demas, ya no tengo tiempo para seguir, lo voy a seguir intentando estos dias y agradezco si me puede decir cual puede ser el problema que estoy teniendo,
+//  los resultados que obtuve es que se sume todo a lo primero que agrego al carrito, o cosas asi, saludos y gracias por todo!! 

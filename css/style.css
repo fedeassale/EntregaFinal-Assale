@@ -24,10 +24,9 @@ section div img{
     height: 15em;
     object-fit: cover;
 }
-/* .card-borde{
-    border-color: $secundaryColor;
-    background-color: $secundaryColor;
-} */
+.width-total{
+    width: 100%;
+}
 .width-figure:hover{
     transform: scale(1.02);
 }
@@ -54,6 +53,10 @@ nav{
 }
 nav a:hover{
     transform: scale(1.2);
+}
+footer{
+    height: 100px;
+    background-image: url(../img/maderaclara.webp);
 }
 .grid-body{
     display: grid;

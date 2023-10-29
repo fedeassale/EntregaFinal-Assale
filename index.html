@@ -3,117 +3,47 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Ferretería FA</title>
+    <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body class="grid-body">
-        <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nav">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="./index.html"><img class="tamañologo" src="./img/logo.png" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item px-2 mx-2">
+                      <a class="nav-link active text-nav" aria-current="page" href="./pages/carrito.html">Perfil</a>
                   </li>
                 </ul>
               </div>
-            </div>
-        </nav>  -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary nav">
-          <div class="container-fluid">
-              <a class="navbar-brand" href="./index.html"><img class="tamañologo" src="./img/Logo Ferreteria FA.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item px-2 mx-2">
-                      <a class="nav-link active text-nav" aria-current="page" href="./pages/carrito.html">Carrito</a>
-                  </li>
-              </ul>
-              <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                  <button class="btn btn-outline-dark" type="submit">Buscar</button>
-              </form>
-            </div>
           </div>
     </nav>
     <aside class="sidebar">
       <p class="centrar">Filtros</p>
-        <div>
-          <p class="centrar">Tipo de Herramientas</p>
-          <div>
-            <input type="checkbox" id="Herramientas Manuales">
-            <label for="Herramientas Manuales">Herramientas Manuales</label>
-          </div>
-          <div>
-            <input type="checkbox" id="Caja">
-            <label for="Caja">Cajas de fijación</label>
-          </div>
-          <div>
-            <input type="checkbox" id="Accesorios de Máquinas">    
-            <label for="Accesorios de Máquinas">Accesorios de Máquinas</label>
-          </div>
-        </div>
         <p class="centrar">Marca</p>
-        <div>
+        <div class="d-flex align-items-center flex-column mt-2">
           <div>
-            <input type="checkbox" id="SC">   
-            <label for="SC">Articulos de SC</label>
+            <button class="btn btn-outline-dark" id="filtroSc">SC</button>
           </div>
           <div>
-            <input type="checkbox" id="Rhein">   
-            <label for="Rhein">Rhein</label>
+            <button class="btn btn-outline-dark" id="filtroRhein">Rhein</button>
           </div>
-        </div>
-        <div>
-            <a href="./error404.html" class="btn btn-general centrar">Aplicar</a>
+          <div>
+            <a class="btn btn-outline-dark mt-4" href="./index.html">Inicio</a>
+          </div>
         </div>
     </aside>
     <main class="main">
-        <section class="d-flex justify-content-around mt-2 flex-wrap">
-            <div class="card width-figure rounded t-2 item">
-              <img src="./img/2x4 externaop.webp" class="card-img-top" alt="Caja de fijación 2x4">
-              <figure class="card-body">
-                <figcaption class="card-title centrar heigh-title text-grande">Caja de fijación 2x4</figcaption>
-                <p class="centrar">$6000</p>
-                
-                <button class="btn btn-outline-dark" id="btn-carrito">Agregar al carrito</button>
-              </figure>
-            </div>
-            <div class="card width-figure bg-body-tertiary rounded item"> 
-              <img src="./img/img.tenazaop.webp" class="card-img-top" alt="Tenaza Armador">
-              <figure class="card-body">
-                <figcaption class="card-title centrar heigh-title text-grande">Tenaza annesan 9"</figcaption>
-                <p class="centrar">$5000</p>
-                
-                <button class="btn btn-outline-dark" id="btn-carrito2">Agregar al carrito</button>
-              </figure>
-            </div>
-            <div class="card width-figure bg-body-tertiary rounded item">
-                <img src="./img/llave.webp" class="card-img-top" alt="Llave fija 10">
-              <figure class="card-body">
-                <figcaption class="card-title centrar heigh-title text-grande">Llave fija 10</figcaption>
-                <p class="centrar">$3000</p>
-                
-                <button class="btn btn-outline-dark" id="btn-carrito3">Agregar al carrito</button>
-              </figure>
-            </div>
+        <h1 class="text-center">Ferreteria FA</h1>
+        <section class="d-flex justify-content-around mt-2 flex-wrap" id="shopContent">
         </section>
-        <!-- <section>
+        <section>
           <table class="table">
             <thead>
               <tr id="trid">
@@ -124,7 +54,7 @@
                 <th scope="col">Precio</th>
                 <th scope="col">Subtotal</th>
                 <th scope="col"><button class="btn btn-outline-dark" id="btn-borrar">Vaciar</button></th>
-              </tr>
+              </tr> 
             </thead>
             <tbody id="items" class="table-striped"></tbody>
             <tfoot>
@@ -135,16 +65,19 @@
                 <th></th>
                 <th></th>
                 <th id="total"></th>
-                <th><button class="btn btn-outline-dark" id="">COMPRAR</button></th>
+                <th><a class="btn btn-outline-dark" href="./pages/carrito.html">COMPRAR</a></th>
               </tr>
             </tfoot>
           </table>
-        </section> -->
+        </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer d-flex justify-content-around align-items-center">
+      <a class=" btn btn-outline-dark px-3" href="./index.html">INICIO</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="./js/productos.js"></script>
-     <!-- <script src="./json/productos.json"></script>  -->
+    <!-- <script src="./js/productos.js"></script> -->
+    <script src="./json/productos.json"></script> 
     <script src="./js/itemcarrito.js"></script>
     <script src="./js/app.js"></script>
   </body>
